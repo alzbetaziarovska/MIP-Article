@@ -1,6 +1,6 @@
 % Engineering Methods
 
-\documentclass[10pt,twoside,english,a4paper]{article}
+\documentclass[10pt ,english,a4paper]{article}
 
 \usepackage[english]{babel}
 \usepackage[IL2]{fontenc}
@@ -62,7 +62,8 @@ We distinguish three primal processes an information retrieval system has to be 
 \item The representation of the user's information need
 \item The comparison of the two representations
 \end{enumerate}
-These processes are shown in the Figure \ref{f:process}. In the figure, rounded boxes represent processed and squared boxes represent data.
+
+These processes are shown in the Figure \ref{f:process}. In the figure, blue colored boxes represent processed and red colored boxes represent data.
 
 \emph{Indexing} usually refers to process of representing the documents. The process happens off-line, meaning, there is no direct involvement of the end user of the information retrieval system. The result of the indexing process is a representation of the document. Documents are often only stored partially, for example only the title and the abstract, plus the actual location of the document. However the indexing might include the actual storage of the document.
 
@@ -72,8 +73,8 @@ The comparison of the query against the document representations is referred to 
 
 \begin{figure*}[tbh]
 \centering
-\includegraphics[scale=1.0]{irprocess.pdf}
-\caption{Processes of Information Retrieval.}
+\includegraphics[scale=0.75]{figure1.pdf}
+\caption{Information Retrieval Processes}
 \label{f:process}
 \end{figure*}
 
@@ -83,11 +84,34 @@ The comparison of the query against the document representations is referred to 
 
 \subsection{Other types of models} \label{models:other}
 
-\paragraph{The Boolean model}
-\cite{hiem09info}
+There will be two information retrieval models mentioned and addressed in this section. Both of them provide exact matching (documents are either retrieved or not), but there is no ranking of the retrieved documents.
+
+\paragraph{The Boolean model} 
+
+The Boolean model is believed to be the first information retrieval model and probably is also one of the most criticized ones. It can be explained by defining query as a unambiguous definition of a set of written documents. To give an example the query term economic defines the group of all documents that are indexed with the label economic. New sets of documents can be creating by combining query terms and their competent sets of documents using the operators of Boole's mathematical logic.
+
+The main advantage of this type of IR model is giving a sense of control over the system to the user. A user can be certain, why has the document been retrieved. According to the document sets' size it is immediately clear which operators of Boolean algebra (AND, OR, NOT) will produce a smaller or bigger set of documents. We can see a visualized example in a Figure \ref{f:boole}\cite{hiem09info}
+
+\begin{figure*}[tbh]
+\centering
+\includegraphics[scale=1.0]{figure2.pdf}
+\caption{Visualization of Boolean combinations of sets by Venn diagrams}
+\label{f:boole}
+\end{figure*}
 
 \paragraph{The vector space model}
-\cite{hiem09info}
+The main point of approach by vector space model is to model information retrieval objects as elements of vector space. To be more specific, terms, documents, queries and so on are all vectors in the vector space. By having the vector space we have a system with linear properties, for example the ability to add together two elements to get a new one or the ability to multiply a vector by a real number.The similarity between documents and queries can be measured using these properties, such as the scalar product of the corresponding vectors. 
+
+In a vector space model, the key components are:
+\begin{itemize}
+\item \emph{Dimension}: The number of terms and keywords that determines the size of the vectors representing documents and queries.
+\item \emph{Basis Vectors}: A set of vectors that form a basis from the vector space. In some cases, these basis vectors may be assumed to be pairwise orthogonal, although this is not always realistic.
+\item \emph{Correlations}: If the term vectors are not orthogonal, their correlations can be used to represent the relationships between terms.
+\item \emph{Document vectors}: These vectors represent the documents in the vector space. The components of these vectors correspond to the weights of the terms within the documents.
+\item \emph{Query vectors}: Represent the user queries, their components correspond to the weights of the terms in the queries.
+\item \emph{Similarity measurement}: A method of determining the similarity between two vectors, such as the scalar product. This similarity can be used to rank documents in the order of their estimated usefulness to a user.
+\end{itemize}
+\cite{rag86vector}
 
 \section{Conclusion}\label{conclusion}
 
