@@ -1,17 +1,21 @@
 % Metódy inžinierskej práce
 
-\documentclass[10pt,twoside,slovak,a4paper]{article}
+\documentclass[10pt,twocolumn,twoside,slovak,a4paper]{article}
 
 \usepackage[slovak]{babel}
 %\usepackage[T1]{fontenc}
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-\usepackage{url} % príkaz \url na formátovanie URL
-\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\usepackage{url}
+\usepackage{hyperref}
 
 \usepackage{cite}
 %\usepackage{times}
+
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{amsmath}
 
 \pagestyle{headings}
 
@@ -22,6 +26,7 @@
 	{\small Fakculty of Informatics and Information Technologies}\\
 	{\small \texttt{xziarovska@stuba.sk}}
 	}
+
 
 \date{\small 19th of October 2023}
 
@@ -35,37 +40,56 @@
 \ldots
 \end{abstract}
 
+\newpage
 
+
+\begin{figure*}
+\flushleft
+\includegraphics[scale=1]{logo.pdf}
+\label{fig:logo}
+\end{figure*}
 
 \section{Introduction}
 
-
-\begin{figure*}[tbh]
+\begin{figure}
+\begin{subfigure}{0.5\textwidth}
 \centering
 \includegraphics[scale=0.5]{diagram1.pdf}
 \caption{Diagram to show the article writing process for this subject.}
-\label{f:diagram}
-\end{figure*}
+\label{f:diagram1}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[scale=0.5]{diagram2.pdf}
+\caption{Diagram to show what the article consists of.}
+\label{f:diagram2}
+\end{subfigure}
+\end{figure}
 
 \section{Nejaká časť} \label{nejaka}
 
 Z obr.~\ref{f:rozhod} je všetko jasné. 
 
-\begin{figure*}[tbh]
+\begin{figure*}
 \centering
-%\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
+\includegraphics[scale=0.5]{diagram1.pdf}
+\caption{A diagram that covers both columns.}
+ \label{fig:wide_diagram1}
 \end{figure*}
 
+\section{Matrix} \label{matrix}
 
+In this section I will create a 5x4 matrix
 
-\section{Iná časť} \label{ina}
-
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
-
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
+\begin{equation}
+\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+4 & 3 & 2 & 1 \\
+10 & 20 & 30 & 40 \\
+40 & 30 & 20 & 10 \\
+0 & 1 & 0 & 1 \\
+\end{pmatrix}
+\end{equation}
 
 
 \subsection{Nejaké vysvetlenie} \label{ina:nejake}
@@ -73,7 +97,7 @@ Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dok
 Niekedy treba uviesť zoznam:
 
 \begin{itemize}
-\item jedna vec
+\item jedna vec\cite{Coplien:MPD}
 \item druhá vec
 	\begin{itemize}
 	\item x
