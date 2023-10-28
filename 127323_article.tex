@@ -1,4 +1,5 @@
 % Engineering Methods
+%Vymazat pred odovzdanim
 %#cvicenie - opytat sa na cviceni
 %ULOHA - treba spravit
 
@@ -17,7 +18,7 @@
 \setstretch{1.5}
 \pagestyle{headings}
 
-\title{Efficiency comparative analysis of techniques in misinformation detection in healthcare data\thanks{Semestral project in subject Engineering Methods, ac. year 2023/24, guidance: MSc. Mirwais Ahmadzai}}
+\title{Comparative Analysis of the Efficiency of Techniques for Detecting Misinformation in Healthcare Data\thanks{Semestral project in subject Engineering Methods, ac. year 2023/24, guidance: MSc. Mirwais Ahmadzai}}
 
 \author{Alžbeta Žiarovská\\[2pt]
 	{\small Slovak University of Technology in Bratislava}\\
@@ -25,7 +26,8 @@
 	{\small \texttt{xziarovska@stuba.sk}}
 	}
 
-\date{\small 26. september 2023}
+%ULOHA - Zmenit na datum odovzdania!!!
+\date{\small \today}
 
 
 
@@ -112,7 +114,7 @@ In the figure \ref{f:man_fact} I created a mind map to illustrate the steps in p
 %\paragraph{Text processing}
 
 \subsubsection{Naïve Bayes}\label{nb}
-The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the result vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. The closer analysis of these differences and their comparison is given in Section \ref{conclusion}.
+The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{conclusion}.
 
 Formula for Naïve Bayes calculation: \cite{sha20mach}
 
@@ -124,7 +126,7 @@ P(A\textbar B) is the probability of event A happening supposing, that event B h
 
 \subsubsection{Support Vector Machine}\label{svm}
 Support vector machine might be classified as a binary technique, as its methodology is to divide the data it was given into two categories \cite{pod19mach} (in the case of misinformation detection into true and false information). The division is made by creating a hyperplane (a object in the vector space with one dimension less, that the vector space itself \cite{sha20mach})
-As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can vary according to the technique used for analysis of the given data and for the Support Vector Machine numbers are on a scale from 83\% \cite{chap22unmask} to 95,05\% \cite{sha20mach}.
+As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can vary according to the technique used for analysis of the given data and for the Support Vector Machine percentages of accuracy are on a scale from 83\% \cite{chap22unmask} to 95,05\% \cite{sha20mach}.
 
 \paragraph{Ethics and sustainability}%Lecture topic reaction
 
@@ -141,5 +143,5 @@ O čom je článok, k čomu ste ním prispeli a čo zostáva otvorené?
 
 \newpage
 \bibliography{127323_bibliography}
-\bibliographystyle{alpha} %alpha, abbrv
+\bibliographystyle{plain} %alpha, abbrv
 \end{document}
