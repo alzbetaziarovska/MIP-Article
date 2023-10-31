@@ -45,9 +45,15 @@
 
 In this article I discuss the current situation regarding spread of misinformation in the medical field. This topic is very important in the aftermath of the global COVID-19 pandemic, as we have seen a great rise of various misinformation on the internet, which provide danger to society or even lives \cite{war18dr}. The main problem in my perception is, that the easy access to all the information on the Internet, which does not necessarily has to be true, can increase fear and anxiety and ultimately lead to the delay of diagnosis and receiving the effective healthcare in the case the information are not perceived correctly \cite{wa19sys}. 
 
-I am focusing on fact-checking and machine learning models as a way to find the medical misinformation. The fact-checking can be done manually or automatically which is introduced more deeply in Section \ref{tech:fact} \cite{bar21health}. Manual fact-checking is important in our everyday life as we have to comprehend a lot of information. The other side I am taking a closer look at are machine learning techniques including Naïve Bayes and Support Vector Machine \cite{bar21health}. I introduce these techniques and compare their efficiency in order to establish which one is the most suitable for healthcare misinformation detection. The comparison is done by comparing the accuracy rates of the machine learning techniques in different researches.
+%In the Section \ref{mih} the term misinformation is described, how it differs from disinformation \cite{gu20misinfo}. Also a brief summary of historical development of misinformation spread is given \cite{pos18short}. It is also important to mention affect that medical fake news might have on our lives, which I address as well \cite{who22infodemics}. The last but not least, in Section \ref{tech}, I am taking a closer look at some of the methods used for misinformation recognition. I going to introduce them in a way, that would be easily understandable for all readers and state some of their outputs, so I can compare their effectiveness in Section \ref{discussion}.
 
-In the Section \ref{mih} the term misinformation is described, how it differs from disinformation \cite{gu20misinfo}. Also a brief summary of historical development of misinformation spread is given \cite{pos18short}. It is also important to mention affect that medical fake news might have on our lives, which I address as well \cite{who22infodemics}. The last but not least, in Section \ref{tech}, I am taking a closer look at some of the methods used for misinformation recognition. I going to introduce them in a way, that would be easily understandable for all readers and state some of their outputs, so I can compare their effectiveness and possible impact for the future in Conclusion. \ref{conclusion}
+\section{Related work}
+
+The topic of misinformation is quite often researched. Some of the work is focused on comparing the different machine learning techniques \cite{sha20mach}, \cite{pod19mach}. Focus of these researches are to introduce how these methods work. Some articles bring new way of misinformation recognition technique \cite{chap22unmask} by combining the two, or even more techniques. Plenty of research have been also done in a field of medical misinformation, which is a important part of my article \cite{gu20misinfo}, \cite{cook15misinfo}, \cite{wa19sys}. These articles mostly focus on defining misinformation their possible cause and consequences.
+
+\section{Methodology}
+
+I am focusing on analyzing machine learning models as a way to find the medical misinformation. The two machine learning techniques I am focusing on are Naïve Bayes and Support Vector Machine. I introduce these techniques and compare their efficiency in order to establish which one is the most suitable for healthcare misinformation detection. The comparison of their efficiency is done by comparing the accuracy rates of detecting false information among true information. 
 
 \section{Misinformation in healthcare}\label{mih}
 
@@ -68,59 +74,15 @@ The terms \emph{misinformation} and \emph{disinformation} are much the same, how
 A vast majority of people is using the Internet and social media for entertainment or information seeking. However, with the possibility of immediate communication and sharing, it has become easy to spread misinformation online \cite{wa19sys}. During the COVID-19 pandemic there have been a great amount of healthcare misinformation spread regarding vaccines and their effectiveness \cite{chap22unmask}. Internet is easily accessible and more and more people are looking for relevant health information without the proper knowledge of how to distinguish, whether the information is true. This can lead to unintentionally getting false information, as many websites do not provide accurate medical information \cite{cook15misinfo}. Another example of current situation can be the popular misinformation about vaccines causing autism, which was repeatedly proven as nonfactual information \cite{wa19sys}. 
 The spread of medical misinformation is not only occurring in the 21st century. In the past there was false information about public health impact of smoking spread by tobacco companies, which was later proven as false. \cite{cook15misinfo}.
 
-%\paragraph{Societal context}%Lecture topic reaction
-%\cite{who22infodemics} page 8 \cite{wa19sys}
-
-
 \section{Misinformation recognition techniques} \label{tech}
-
-\subsection{Fact-checking technique} \label{tech:fact}
-The process of fact-checking is used to distinguish, whether the specific claim is based on facts. This technique is usually used in a field of journalism \cite{alh18fact}.
-There are two basic types of fact-checking to be differentiated:\cite{vla14fact} 
-\begin{itemize}
-\item Manual fact-checking
-\item Automatic fact-checking
-\end{itemize}
-In subsection \ref{tech:fact:man} and \ref{tech:fact:auto} both of these will be introduced briefly.
-
-\subsubsection{Manual fact-checking}\label{tech:fact:man}
-Manual fact-checking is important process when we find some potentially false information on the Internet. However, it can be rather time consuming and usually ineffective way of finding factual information when the source is quite complex and contains a lot of detailed information \cite{gu22fact}. I offer a list of some of the basic points that can hold to in order to make the manual fact-checking as effective and quick as possible:
-\begin{enumerate}
-\item{\emph{Context}} - It is crucial to distinguish, whether the information is meant to be served as a fact to provide information or even to convince, or whether it is supposed to be taken as an exaggeration or sarcasm \cite{alh18fact}.
-\item {\emph{Sentimental value}} - The goal of misinformation is often to scare people and spread panic. The difference between ratio of positive and negative in true and false claims is notable. Whilst in true claims the ratio is 71\% of positive words to 29\% of negative words, in misinformation sources this ratio is shifted the other way around with only 38\% of positive words and 62\% of negative words \cite{bar21health}.
-\item {\emph{Sources}} - Perhaps the most important step might be to check the original sources of the claim \cite{gra17fact}. Anybody can share anything on the internet, so it is important to check, where does the information originally come from. We might need to look for the trustworthiness of the website or references, where did the author get the information from.
-\end{enumerate}
-In the figure \ref{f:man_fact} I created a mind map to illustrate the steps in process of manual fact-checking I enlisted in this section.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{manual_factchecking.pdf}
-\caption{Mind map of Manual Fact-checking steps.}
-\label{f:man_fact}
-\end{figure}
-
-%\paragraph{Technology and people}%Lecture topic reaction
-%backfire and boomerang page 5\cite{cook15misinfo}
-%How can we benefit from manual fact-checking in out everyday lives
-
-\subsubsection{Automatic fact-checking}\label{tech:fact:auto}
-Automatic fact-checking can improve speed of the whole process and save the time needed for manual fact-checking. It uses natural language processing, databases and machine learning techniques \ref{tech:mach} to check, whether the claim is true \cite{gu22fact}. To make fact-checking more accessible there were many websites created providing the possibility of checking truthfulness. To name a few examples: \emph{factcheck.org}, \emph{fullfact.org} or \emph{politifact.com} \cite{alh18fact}.
-The process of automatic fact-checking consists of three stages: \cite{gu22fact}
-\begin{itemize}
-\item Claim detection
-\item Evidence retrieval
-\item Claim verification
-\end{itemize}
+%\paragraph{Societal context}%Lecture topic reaction
+%the whole fact-checking thing can be extracted into this paragraph 
+%\cite{who22infodemics} page 8 \cite{wa19sys}
 
 \subsection{Machine learning techniques} \label{tech:mach}
 
-%\paragraph{Definition}
-
-%\paragraph{Text processing}
-
 \subsubsection{Naïve Bayes}\label{nb}
-%#cvicenie - explain how they work - predbezna verzia alebo staci final (kvoli rozsahu)
-The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{conclusion}.
+The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{discussion}.
 
 Formula for Naïve Bayes calculation: \cite{sha20mach}
 
@@ -136,16 +98,39 @@ As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can v
 
 %\paragraph{Ethics and sustainability}%Lecture topic reaction
 
-\section{Conclusion}\label{conclusion}
+\section{Analysis and results}\label{analysis}
+I have introduced a couple of machine learning techniques to detect and highlight misinformation in healthcare in order to compare their effectiveness. To do so, I have searched of numeric expression of their accuracy in percentage - how big is the proportion of correctly categorized claims or documents. In Chaphekar's \cite{chap22unmask} and Poddar's \cite{pod19mach} there have been used two different methods to establish the importance of words in document. That is the reason why there are two different results for both of the machine learning techniques in these papers. I have made an average of these percentage, which you can find in Table \ref{table:results} with corresponding superscripts. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{||c c||} 
+ \hline
+Naïve Bayes & Support Vector Machine\\ [0.5ex] 
+ \hline\hline
+ $88.37\%^{1}$ & $84\%^{1}$  \\
+ \hline
+ $98.71\%^{2}$ & $94.17\%^{2}$  \\
+ \hline
+ $85.85\%^{3}$ & $90.95\%^{3}$  \\
+ \hline
+ $84.06\%^{4}$ & $95.05\%^{4}$  \\ [1ex]
+ \hline
+\end{tabular}
+\caption{\centering Accuracy of machine learning techniques in misinformation detection according to various researches, 1 - \cite{chap22unmask}, 2 - \cite{bar21health}, 3 - \cite{pod19mach}, 4 - \cite{sha20mach}}
+\label{table:results}
+\end{table}
+
+According to the results of the table, Support Vector Machine is more efficient in detecting misinformation with average accuracy rate of 91.04\%. However, the Naïve Bayes method is behind just by a little bit the average percentage of 89.25\%. These result are not so greatly varying from each other and it shows, that machine learning techniques nowadays are highly advanced and can achieve brilliant results.
 %\cite{chap22unmask}
 %\cite{bar21health} \cite{sha20mach} \cite{pod19mach}
-%ULOHA - create a diagram to compare the accuracy of the models according to different sources (or make their average from the different sources and only put one info in the diagram, do not forget to put the equation of evaluating the average with reference to every number)
 
-Je nejaké riešenie a aké?
-Je vaše riešenie podobné iným (hoci aj z inej oblasti a len v z určitého hľadiska)?
-O čom je článok, k čomu ste ním prispeli a čo zostáva otvorené?
+\section{Discussion}
 
-%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
+I have found several evidence, that machine learning techniques can be a very useful (and accurate) tool in recognizing misinformation in healthcare. The impacts of spreading false medical information can be devastating and it is important to spread awareness of their existence and how to effectively recognize them and assume the correct approach. The world is changing quickly and what is true today might not be correct tomorrow and technology mentioned in this article provides a serious help in this direction. There are already many websites available using these techniques to provide a relevant output to help us find the true information on the medical question we have.
+
+\section{Conclusion}\label{conclusion}
+
+This article is a literature review of articles researching misinformation detection in healthcare data. I have compared results from several resources and based on these I have created an analysis of two machine learning techniques I focused on. In order to provide analysis of their efficiency I came to conclusion, that the machine learning techniques are highly advanced and can differentiate between factual and nonfactual information efficiently. This can provide solution to the main problem I mentioned in the beginning of the article. People may not always perceive correctly the information found on the Internet. 
 
 \newpage
 \bibliography{127323_bibliography}
