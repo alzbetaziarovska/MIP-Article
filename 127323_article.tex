@@ -2,6 +2,7 @@
 %Vymazat pred odovzdanim
 %#cvicenie - opytat sa na cviceni
 %ULOHA - treba spravit
+%3/11/2023/14.31
 
 \documentclass[11pt ,english,a4paper]{article}
 
@@ -37,23 +38,23 @@
 \newpage
 
 \begin{abstract}
-\ldots
+This article offers a comparative analysis of efficiency of two machine learning techniques (Naïve Bayes and Support Vector Machine) used for information retrieval a detection of misinformation in a field of healthcare data. Article is a literature review and offers an outline of current situation of these machine learning methods. The comparison has found a negligible difference between accuracy of the two compared techniques in their efficiency for data retrieval as means of combating medical misinformation. There is a possibility of the use of my findings in everyday practice as these finding can point out that machine learning models are effective in sorting and retrieval of the medical information on the internet. 
 \end{abstract}
 \newpage
 
 \section{Introduction}\label{intro}
 
-In this article I discuss the current situation regarding spread of misinformation in the medical field. This topic is very important in the aftermath of the global COVID-19 pandemic, as we have seen a great rise of various misinformation on the internet, which provide danger to society or even lives \cite{war18dr}. The main problem in my perception is, that the easy access to all the information on the Internet, which does not necessarily has to be true, can increase fear and anxiety and ultimately lead to the delay of diagnosis and receiving the effective healthcare in the case the information are not perceived correctly \cite{wa19sys}. 
+In this article I discuss the current situation regarding spread of misinformation in the medical field and how can machine learning techniques contribute to retrieval and processing of healthcare data. This topic is very important in the aftermath of the global COVID-19 pandemic, as we have seen a great rise of various misinformation in the healthcare domain, which provide danger to public health or even lives. \cite{war18dr}. The main problem in my perception is, that the easy access to all the information on the Internet, while valuable, can increase fear and anxiety and ultimately lead to the delay of diagnosis and receiving the effective healthcare when the information is not perceived correctly \cite{wa19sys}. I will argue that various machine learning models Naïve Bayes and Support Vector Machine can be used as a potential way of data retrieval that has ability to counter prevalence of misinformation in healthcare.
 
 %In the Section \ref{mih} the term misinformation is described, how it differs from disinformation \cite{gu20misinfo}. Also a brief summary of historical development of misinformation spread is given \cite{pos18short}. It is also important to mention affect that medical fake news might have on our lives, which I address as well \cite{who22infodemics}. The last but not least, in Section \ref{tech}, I am taking a closer look at some of the methods used for misinformation recognition. I going to introduce them in a way, that would be easily understandable for all readers and state some of their outputs, so I can compare their effectiveness in Section \ref{discussion}.
 
 \section{Related work}
 
-The topic of misinformation is quite often researched. Some of the work is focused on comparing the different machine learning techniques \cite{sha20mach}, \cite{pod19mach}. Focus of these researches are to introduce how these methods work. Some articles bring new way of misinformation recognition technique \cite{chap22unmask} by combining the two, or even more techniques. Plenty of research have been also done in a field of medical misinformation, which is a important part of my article \cite{gu20misinfo}, \cite{cook15misinfo}, \cite{wa19sys}. These articles mostly focus on defining misinformation their possible cause and consequences.
+The topic of misinformation is quite often researched. Many of the works I came across use information retrieval done by machine learning as a way of recognizing misinformation found in healthcare data. Some of this work is focused on comparing the different machine learning techniques \cite{sha20mach}, \cite{pod19mach}. Focus of these researches are to introduce how these methods work. Other articles bring new way information retrieval technique \cite{chap22unmask} by combining the two, or even more techniques. Plenty of research have been also done in a field of processing medical misinformation, which is a important part of my article \cite{gu20misinfo}, \cite{cook15misinfo}, \cite{wa19sys}. These articles mostly focus on defining misinformation their possible cause and consequences. By making a revision of these works, I gain deeper knowledge of the healthcare misinformation and get a better starting point to make my own analysis.
 
-\section{Methodology}
+\section{Methodology}\label{methodology}
 
-I am focusing on analyzing machine learning models as a way to find the medical misinformation. The two machine learning techniques I am focusing on are Naïve Bayes and Support Vector Machine. I introduce these techniques and compare their efficiency in order to establish which one is the most suitable for healthcare misinformation detection. The comparison of their efficiency is done by comparing the accuracy rates of detecting false information among true information. 
+For this article my methodology is based on an in-depth literature review of articles and researches debating medical misinformation and machine learning techniques used for information retrieval to detect such misinformation. From the literature I extracted relevant data and based on these I concluded a comparative analysis of efficiency of machine learning models as a way to find the medical misinformation. The two machine learning techniques I am focusing on are Naïve Bayes and Support Vector Machine. I introduce these techniques and compare their efficiency in order to establish which one is the most suitable for retrieving healthcare misinformation and its detection. The comparison of their efficiency is done by comparing the accuracy rates of detecting and correctly categorizing false information among true information. 
 
 \section{Misinformation in healthcare}\label{mih}
 
@@ -76,13 +77,16 @@ The spread of medical misinformation is not only occurring in the 21st century. 
 
 \section{Misinformation recognition techniques} \label{tech}
 %\paragraph{Societal context}%Lecture topic reaction
-%the whole fact-checking thing can be extracted into this paragraph 
+%In everyday life it is important to look out for the misinformation. There is some general advice that can provide a helpful guide to recognize healthcare misinformation as we tend to search symptoms on the Internet. 
 %\cite{who22infodemics} page 8 \cite{wa19sys}
+
+%\paragraph{Technology and people}%Lecture topic reaction
+%websites for fact-checking
 
 \subsection{Machine learning techniques} \label{tech:mach}
 
 \subsubsection{Naïve Bayes}\label{nb}
-The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{discussion}.
+The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{analysis}.
 
 Formula for Naïve Bayes calculation: \cite{sha20mach}
 
@@ -99,7 +103,7 @@ As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can v
 %\paragraph{Ethics and sustainability}%Lecture topic reaction
 
 \section{Analysis and results}\label{analysis}
-I have introduced a couple of machine learning techniques to detect and highlight misinformation in healthcare in order to compare their effectiveness. To do so, I have searched of numeric expression of their accuracy in percentage - how big is the proportion of correctly categorized claims or documents. In Chaphekar's \cite{chap22unmask} and Poddar's \cite{pod19mach} there have been used two different methods to establish the importance of words in document. That is the reason why there are two different results for both of the machine learning techniques in these papers. I have made an average of these percentage, which you can find in Table \ref{table:results} with corresponding superscripts. 
+I have introduced a couple of machine learning techniques to retrieve and detect misinformation in healthcare in order to compare their effectiveness. In this section I compare their results and analyze their performance. To do so, I have searched of numeric expression of their accuracy in percentage - how big is the proportion of correctly categorized claims or documents. As mentioned in Section \ref{methodology}, this analysis is based on review of existing literature, which allows me to access finding from multiple sources. Each source provides different results which can be found in Table \ref{table:results} with corresponding superscripts of the source that the number comes from. 
 
 \begin{table}[H]
 \centering
@@ -120,17 +124,25 @@ Naïve Bayes & Support Vector Machine\\ [0.5ex]
 \label{table:results}
 \end{table}
 
-According to the results of the table, Support Vector Machine is more efficient in detecting misinformation with average accuracy rate of 91.04\%. However, the Naïve Bayes method is behind just by a little bit the average percentage of 89.25\%. These result are not so greatly varying from each other and it shows, that machine learning techniques nowadays are highly advanced and can achieve brilliant results.
+According to the results of this comparison, Support Vector Machine is slightly more efficient in processing medical misinformation with average accuracy rate of 91.04\%. However, the Naïve Bayes method is behind just by a little bit with the average percentage of 89.25\%. The average accuracy rate of information retrieval using Naïve Bayes or Support Vector Machine can be seen in Figure \ref{f:average}. These result are not so greatly differing from each other and it shows, that machine learning techniques nowadays are highly advanced and can achieve significant results.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{average_accuracy.pdf}
+\caption{Mind map of Manual Fact-checking steps.}
+\label{f:average}
+\end{figure}
+
 %\cite{chap22unmask}
 %\cite{bar21health} \cite{sha20mach} \cite{pod19mach}
 
 \section{Discussion}
 
-I have found several evidence, that machine learning techniques can be a very useful (and accurate) tool in recognizing misinformation in healthcare. The impacts of spreading false medical information can be devastating and it is important to spread awareness of their existence and how to effectively recognize them and assume the correct approach. The world is changing quickly and what is true today might not be correct tomorrow and technology mentioned in this article provides a serious help in this direction. There are already many websites available using these techniques to provide a relevant output to help us find the true information on the medical question we have.
+I have found several evidence to confirm, that machine learning techniques can be a very useful (and accurate) tool in retrieving and recognizing misinformation in healthcare with both Naïve Bayes and Support Vector Machine showing satisfactory performance. In my article I used accuracy rate results of these two machine learning techniques used for misinformation detection to compare their efficiency. The Support Vector Machine is according to the result more accurate, however the difference is trivial. It is important to acknowledge, that my article is based on literature review of existing researches, which creates limitations by the range of the researches used for the purpose of this article.
 
 \section{Conclusion}\label{conclusion}
 
-This article is a literature review of articles researching misinformation detection in healthcare data. I have compared results from several resources and based on these I have created an analysis of two machine learning techniques I focused on. In order to provide analysis of their efficiency I came to conclusion, that the machine learning techniques are highly advanced and can differentiate between factual and nonfactual information efficiently. This can provide solution to the main problem I mentioned in the beginning of the article. People may not always perceive correctly the information found on the Internet. 
+This article is an in-depth literature review of articles researching misinformation retrieval and detection in healthcare data using machine learning methods. I have compared results from several resources and based on these I have created an analysis of two machine learning techniques I focused on. In order to provide analysis of their efficiency I came to conclusion, that the machine learning techniques are highly advanced and can efficiently differentiate between factual and nonfactual information. This can provide solution to the main problem I mentioned in the beginning of the article - people possibly not perceiving the information found on the Internet correctly. With the use of machine learning techniques there is a possibility of decreasing spread of medical misinformation by having effective tool for information processing.
 
 \newpage
 \bibliography{127323_bibliography}
