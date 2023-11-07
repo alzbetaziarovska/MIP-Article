@@ -1,20 +1,8 @@
-% Valentino Vranic
-% Metody inzinierskej prace 2012/13
-
 \documentclass{beamer}
 
-%\usetheme{Warsaw}
-%\usetheme{Antibes}
-%\usetheme{JuanLesPins}
 \usetheme{Goettingen}
 
-%\usecolortheme{seahorse}
-%\usecolortheme{dolphin}
 \usecolortheme{rose}
-% http://deic.uab.es/~iblanes/beamer_gallery/index_by_color.html
-%\usecolortheme{beaver}
-
-%\useoutertheme[]{sidebar}
 
 \setbeamercovered{transparent}
 
@@ -25,9 +13,7 @@
 
 \usepackage{listings}
 \usepackage{translator}
-
-\lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
-%\lstset{language=C,basicstyle=\fontsize{10.5}{12.6}\selectfont,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fixed}
+\usepackage{enumitem}
 
 \def\BibTeX{\textsc{Bib}\kern-.08em\TeX} 
 
@@ -63,6 +49,7 @@
 \newenvironment{poznamka}{\begin{beamercolorbox}[rounded=true,shadow=false]{block body}}{\end{beamercolorbox}}
 
 \setbeamertemplate{footline}[page number]
+\setbeamertemplate{section in toc}[sections numbered]
 {
 %\insertpagenumber
 %\begin{beamercolorbox}{section in head/foot}
@@ -99,28 +86,37 @@
 \tableofcontents
 \end{frame}
 
-\section{Motivation}
+\section{Motivation and problem}
 
-\begin{frame}[fragile=singleslide]\frametitle{Motivation}
-Ešte pre prehľadom prezentácie sa zvyčajne uvádza motivácia.
-
-Bežne sa aj tu používajú odrážky, ale tento text je naschvál uvedený bez odrážok. Niekedy môže byť potrebné uviesť aj citáty\ldots{}
-
-Toto je len príklad slajdov. Ako urobiť dobrú prezentáciu bolo vysvetlené na prednáške.
+\begin{frame}[fragile=singleslide]\frametitle{Motivation and problem}
+\begin{itemize}[label=$\bullet$]
+\item Motivation
+	\begin{itemize}[label=$\bullet$]
+	\item Personal Interest in Misinformation
+	\item Learning about Machine Learning Techniques
+	\end{itemize}
+\item Problem
+\begin{itemize}[label=$\bullet$]
+	\item Perception of Information found on the Internet
+	\item Everyday use for Information Retrieval
+	\end{itemize}
+\end{itemize}
 \end{frame}
 
 \section{Related Work}
-% príkaz \ssection by vytvoril zvláštný slajd s názvom časti - v krátkych prezentáciách to prekáža, lebo oberá o čas
 
 \begin{frame}[fragile=singleslide]\frametitle{Related Work}
-\begin{itemize}
-\item Odrážky na prvej úrovni
-\item Môže ich byť viac
-	\begin{itemize}
-	\item Toto je už druhá úroveň
-	\item Ďalšia odrážka
+\begin{itemize}[label=$\bullet$]
+\item Misinformation
+	\begin{itemize}[label=$\bullet$]
+	\item Misinformation vs. Disinformation
+	\item Medical Misinformation
 	\end{itemize}
-\item Pokračuje prvá úroveň
+\item Machine Learning Techniques used for Information Retrieval
+	\begin{itemize}[label=$\bullet$]
+	\item Naive Bayes
+	\item Support Vector Machine
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -139,16 +135,62 @@ Toto je len príklad slajdov. Ako urobiť dobrú prezentáciu bolo vysvetlené n
 \end{itemize}
 \end{frame}
 
+\section{Analysis and Results}
 
-\begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
-%\includegraphics[scale=.35]{diagram.pdf}
-% pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
-% scale určuje veľkosť obrázku
-
-{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
+\begin{frame}[fragile=singleslide]\frametitle{Analysis and Results}
+\begin{table}[H]
+\centering
+\begin{tabular}{||c c||} 
+ \hline
+Naïve Bayes & Support Vector Machine\\ [0.5ex] 
+ \hline\hline
+ $88.37\%$ & $84\%$  \\
+ \hline
+ $98.71\%$ & $94.17\%$  \\
+ \hline
+ $85.85\%$ & $90.95\%$  \\
+ \hline
+ $84.06\%$ & $95.05\%$  \\ [1ex]
+ \hline
+\end{tabular}
+\caption{\centering Accuracy of machine learning techniques in misinformation detection according to various researches}
+\label{table:results}
+\end{table}
 \end{frame}
 
-\section{Misinformation in Healthcare}
+\begin{frame}[fragile=singleslide]\frametitle{Analysis and Results}
+\begin{figure}
+\centering
+\includegraphics[scale=.35]{average_accuracy.pdf}
+\end{figure}
+\end{frame}
+
+\section{My Contribution}
+
+\begin{frame}[fragile=singleslide]\frametitle{My Contribution}
+\begin{itemize}
+\item Každá prezentácia musí byť nejako uzavretá
+\item Ale vždy je čo robiť ďalej\ldots{}
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
+
+Text za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
+
+\section*{Pomocník}
+% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
+
+\begin{frame}[fragile=singleslide]\frametitle{My Contribution}
+\begin{itemize}
+\item Každá prezentácia musí byť nejako uzavretá
+\item Ale vždy je čo robiť ďalej\ldots{}
+\end{itemize}
+{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
+\end{frame}
 
 \begin{frame}[fragile=singleslide]\frametitle{Misinformation in Healthcare}
 \begin{itemize}
@@ -166,11 +208,6 @@ int main() {
 
 \item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
 \end{itemize}
-\end{frame}
-
-\section{Machine Learning Techniques}
-
-\begin{frame}[fragile=singleslide]\frametitle{Machine Learning Techniques}
 \begin{poznamka}
 Text možno uviesť v rámiku
 \end{poznamka}
@@ -199,31 +236,3 @@ void na_druhu(int i) {
 
 \end{itemize}
 \end{frame}
-
-\section{My Contribution}
-% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
-
-\begin{frame}[fragile=singleslide]\frametitle{My Contribution}
-\begin{itemize}
-\item Každá prezentácia musí byť nejako uzavretá
-\item Ale vždy je čo robiť ďalej\ldots{}
-\end{itemize}
-\end{frame}
-
-\section*{Zhodnotenie a ďalšia práca}
-% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
-
-\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie a ďalšia práca}
-\begin{itemize}
-\item Každá prezentácia musí byť nejako uzavretá
-\item Ale vždy je čo robiť ďalej\ldots{}
-\end{itemize}
-\end{frame}
-
-
-\end{document}
-
-
-
-
-Text \end{document} za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
