@@ -21,6 +21,7 @@
 	{\small \texttt{xziarovska@stuba.sk}}
 	}
 
+%ULOHA - zmenit na datum odovzdania
 \date{\small 5th November 2023}
 
 
@@ -52,11 +53,35 @@ For this article my methodology is based on an in-depth literature review of art
 \paragraph{Difference between misinformation and disinformation}
 The terms \emph{misinformation} and \emph{disinformation} are much the same, however, a small, but crucial difference can be distinguished. The difference between the two is a intention with which the false information is made accessible to the public and spread. Whilst the misinformation is usually created without direct intention of misleading and spreading false, meaning the person who put the information into the world might not actually know it is not true. On the other hand, disinformation is essentially created to spread false information. An example of such activity can be political propaganda \cite{gu20misinfo} \cite{cook15misinfo}. Even though the terms are not meaning the same, for the purpose of this article they are used as synonyms, because the author's knowledge, whether the information is factual, is negligible in the scope of its false recognition.
 
+\paragraph{Historical development of concept of misinformation}%Lecture topic reaction
+As the historical events have shown, the yearn for spreading not true information, either for amusement or with a goal of hurting someone, is old as a humanity itself \cite{bur17history}.
+
+In the 16th century the writers have started to create completely false stories and plays in order to offer entertainment, but the drive was not only positive. During the French Revolution a rumor (in France called \emph{canard}) was used to discredit the queen Marie Antoinette, which doubtlessly did not help her in the later events of the French Revolution. \cite{bur17history} 
+
+When the mass media took their place, the misleading was often used in order to change the opinion of the public during the times of war. For example during the World War II the Nazi propaganda was reaching the peaks of political propaganda ever. \cite{pos18short}
+
+The rise of the \emph{hoax} in the era of the Internet is enormous and numerous fake websites were created.\cite{bur17history} Nowadays the information revolution by the Internet has brought many ways of spreading false information, but the way of their detection is not yet perfectly defined and therefore there is need for effective adaptive mechanisms.
+
 \paragraph{Health care misinformation}
 A vast majority of people is using the Internet and social media for entertainment or information seeking. However, with the possibility of immediate communication and sharing, it has become easy to spread misinformation online \cite{wa19sys}. During the COVID-19 pandemic there have been a great amount of healthcare misinformation spread regarding vaccines and their effectiveness \cite{chap22unmask}. Internet is easily accessible and more and more people are looking for relevant health information without the proper knowledge of how to distinguish, whether the information is true. This can lead to unintentionally getting false information, as many websites do not provide accurate medical information \cite{cook15misinfo}. Another example of current situation can be the popular misinformation about vaccines causing autism, which was repeatedly proven as nonfactual information \cite{wa19sys}. 
 The spread of medical misinformation is not only occurring in the 21st century. In the past there was false information about public health impact of smoking spread by tobacco companies, which was later proven as false. \cite{cook15misinfo}.
 
 \section{Machine learning techniques} \label{tech}
+
+\paragraph{Societal context}%Lecture topic reaction
+It is important to look out for the misinformation in everyday life. There is some general advice that can provide a helpful guide to recognize healthcare misinformation as we don't always have an immediate access to some of the machine learning techniques mentioned later in the article in this Section.
+I offer a list of some of the basic points that can help to recognize possible misinformation as effective and quick as possible: 
+\begin{enumerate}
+\item{\emph{Context}} - It is crucial to distinguish, whether the information is meant to be served as a fact to provide information or even to convince, or whether it is supposed to be taken as an exaggeration or sarcasm \cite{alh18fact}.
+\item {\emph{Sentimental value}} - The goal of misinformation is often to scare people and spread panic. The difference between ratio of positive and negative in true and false claims is notable. Whilst in true claims the ratio is 71\% of positive words to 29\% of negative words, in misinformation sources this ratio is shifted the other way around with only 38\% of positive words and 62\% of negative words \cite{bar21health}.
+\item {\emph{Sources}} - Perhaps the most important step might be to check the original sources of the claim \cite{gra17fact}. Anybody can share anything on the internet, so it is important to check, where does the information originally come from. We might need to look for the trustworthiness of the website or references, where did the author get the information from.
+\end{enumerate}
+%#cvicenie - diagram?
+%\cite{who22infodemics} page 8 \cite{wa19sys}
+
+\paragraph{Technology and people}%Lecture topic reaction
+Besides using the tips for retrieving information on our own there were created websites that offer the result of the misinformation detection and can offer highly reliable picture of whether the checked claim is true or false. Using these websites can speed up the whole process and save the time needed for processing the information manually. These websites usually use the machine learning techniques explained in this Section. A few examples of such websites can be \emph{fullfact.org} or \emph{politifact.com} \cite{alh18fact}.
+%websites for fact-checking \cite{alh18fact}
 
 \subsection{Naïve Bayes}\label{nb}
 The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. This method uses probability of the events without taking their relation into the consideration \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{analysis}.
@@ -72,6 +97,9 @@ P(A\textbar B) is the probability of event A happening supposing, that event B h
 \subsection{Support Vector Machine}\label{svm}
 Support vector machine might be classified as a binary technique, as its methodology is to divide the data it was given into two categories \cite{pod19mach} (in the case of misinformation detection into true and false information). The division is made by creating a hyperplane (a object in the vector space with one dimension less than the vector space itself \cite{sha20mach})
 As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can vary according to the technique used for analysis of the given data and for the Support Vector Machine percentages of accuracy are on a scale from 83\% \cite{chap22unmask} to 95,05\% \cite{sha20mach}.
+
+\paragraph{Ethics and sustainability}%Lecture topic reaction
+As I have established before, spread of false information in medical field can have risky and potentially fatal consequences. Therefore, the retrieval and detection of healthcare misinformation is significant. The machine learning techniques I have mentioned - Naïve Bayes and Support Vector Machine can be used for such purpose. \cite{chap22unmask}. Nevertheless, the incorporation of machine learning techniques requires careful approach, considering, that the data-sets used for training can be biased and generate inaccurate information. \cite{who21ethics}. Therefore there is a need to check, whether the data-sets are representing the population correctly, with adequate diversity. \cite{sch23aut}.
 
 \section{Analysis and results}\label{analysis}
 I have introduced a couple of machine learning techniques to retrieve and detect misinformation in healthcare in order to compare their effectiveness. In this section I compare their results and analyze their performance. To do so, I have searched of numeric expression of their accuracy in percentage - how big is the proportion of correctly categorized claims or documents. As mentioned in Section \ref{methodology}, this analysis is based on review of existing literature, which allows me to access finding from multiple sources. Each source provides different results which can be found in Table \ref{table:results} with corresponding superscripts of the source that the number comes from. 

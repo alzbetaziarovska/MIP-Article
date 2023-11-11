@@ -15,32 +15,6 @@
 \usepackage{translator}
 \usepackage{enumitem}
 
-\def\BibTeX{\textsc{Bib}\kern-.08em\TeX} 
-
-\newcommand{\footcite}[1]{\footnote{\tiny #1}}
-\newcommand{\umlet}{.5}
-\newcommand{\emp}[1]{\textit{\alert{#1}}}
-\newcommand{\kw}[1]{\mbox{\textbf{#1}}}
-\newcommand{\id}[1]{\texttt{#1}}
-\newcommand{\stl}{\guillemotleft}
-\newcommand{\str}{\guillemotright}
-
-\newcommand{\lsti}{\lstinline[basicstyle=\fontsize{10.5}{12.1}\selectfont]}
-
-\newcommand{\ssection}[1]{
-	\section{#1}
-	\begin{frame}[fragile=singleslide]\frametitle{}
-	\Huge #1
-	\end{frame}
-}
-
-\newcommand{\ssectionn}[1]{
-	\section*{#1}
-	\begin{frame}[fragile=singleslide]\frametitle{}
-	\Huge #1
-	\end{frame}
-}
-
 \newenvironment{program}{\begin{beamercolorbox}[rounded=true,shadow=true]{block body}\vspace{-4mm}}{\vspace{-2mm}\end{beamercolorbox}}
 
 \setbeamercolor{fvystup}{fg=white,bg=black}
@@ -48,16 +22,7 @@
 
 \newenvironment{poznamka}{\begin{beamercolorbox}[rounded=true,shadow=false]{block body}}{\end{beamercolorbox}}
 
-\setbeamertemplate{footline}[page number]
 \setbeamertemplate{section in toc}[sections numbered]
-{
-%\insertpagenumber
-%\begin{beamercolorbox}{section in head/foot}
-%\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
-%\end{beamercolorbox}%
-}
-
-
 
 \author{Alžbeta Žiarovská}
 \institute{
@@ -92,13 +57,13 @@
 \begin{itemize}[label=$\bullet$]
 \item Motivation
 	\begin{itemize}[label=$\bullet$]
-	\item Personal Interest in Misinformation
-	\item Learning about Machine Learning Techniques
+	\item Personal interest in misinformation
+	\item Learning about machine learning techniques
 	\end{itemize}
 \item Problem
 \begin{itemize}[label=$\bullet$]
-	\item Perception of Information found on the Internet
-	\item Everyday use for Information Retrieval
+	\item Perception of information found on the Internet
+	\item Everyday use for information retrieval
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -109,10 +74,10 @@
 \begin{itemize}[label=$\bullet$]
 \item Misinformation
 	\begin{itemize}[label=$\bullet$]
-	\item Misinformation vs. Disinformation
-	\item Medical Misinformation
+	\item Misinformation vs. disinformation
+	\item Medical misinformation
 	\end{itemize}
-\item Machine Learning Techniques used for Information Retrieval
+\item Machine learning techniques used for information retrieval
 	\begin{itemize}[label=$\bullet$]
 	\item Naive Bayes
 	\item Support Vector Machine
@@ -125,13 +90,11 @@
 \section{Methodology}
 
 \begin{frame}[fragile=singleslide]\frametitle{Methodology}
-\begin{itemize}
-\item Nejaký text
-\item Ďalší text -- \emph{zvýraznený text}
-\item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
-
-% odrážka s odkazom na zdroj:
-\item Bol použitý balík beamer\footcite{\url{http://www.tex.ac.uk/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
+\begin{itemize}[label=$\bullet$]
+\item Getting general knowledge of the topic
+\item Introducing the term misinformation 
+\item Introducing Naive Bayes and Support Vector Machine
+\item Summarizing and comparing the results found in various sources
 \end{itemize}
 \end{frame}
 
@@ -168,9 +131,9 @@ Naïve Bayes & Support Vector Machine\\ [0.5ex]
 \section{My Contribution}
 
 \begin{frame}[fragile=singleslide]\frametitle{My Contribution}
-\begin{itemize}
-\item Každá prezentácia musí byť nejako uzavretá
-\item Ale vždy je čo robiť ďalej\ldots{}
+\begin{itemize}[label=$\bullet$]
+\item Relevant data extraction
+\item Efficient differentiation between false and true information
 \end{itemize}
 \end{frame}
 
