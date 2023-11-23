@@ -51,9 +51,18 @@
 \tableofcontents
 \end{frame}
 
-\section{Motivation and problem}
+\section{Introduction}
 
-\begin{frame}[fragile=singleslide]\frametitle{Motivation and problem}
+\begin{frame}[fragile=singleslide]\frametitle{Introduction}
+\begin{itemize}[label=$\bullet$]
+\item Why are we here?
+\item What is the article about?
+\end{itemize}
+\end{frame}
+
+\section{Motivation, problem and my contribution}
+
+\begin{frame}[fragile=singleslide]\frametitle{Motivation, problem and my contribution}
 \begin{itemize}[label=$\bullet$]
 \item Motivation
 	\begin{itemize}[label=$\bullet$]
@@ -61,9 +70,13 @@
 	\item Learning about machine learning techniques
 	\end{itemize}
 \item Problem
-\begin{itemize}[label=$\bullet$]
-	\item Perception of information found on the Internet
-	\item Everyday use for information retrieval
+	\begin{itemize}[label=$\bullet$]
+	\item Perception of healthcare information found on the Internet
+	\end{itemize}
+\item My contribution
+	\begin{itemize}[label=$\bullet$]
+	\item Summarizing use of machine learning techniques for healthcare information retrieval
+	\item Possible use in everyday life for medical misinformation recognition
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -72,15 +85,16 @@
 
 \begin{frame}[fragile=singleslide]\frametitle{Related Work}
 \begin{itemize}[label=$\bullet$]
-\item Misinformation
-	\begin{itemize}[label=$\bullet$]
-	\item Misinformation vs. disinformation
-	\item Medical misinformation
-	\end{itemize}
 \item Machine learning techniques used for information retrieval
 	\begin{itemize}[label=$\bullet$]
 	\item Naive Bayes
 	\item Support Vector Machine
+	\item New machine learning techniques
+	\end{itemize}
+\item Misinformation
+	\begin{itemize}[label=$\bullet$]
+	\item Misinformation vs. disinformation
+	\item Medical misinformation
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -91,111 +105,75 @@
 
 \begin{frame}[fragile=singleslide]\frametitle{Methodology}
 \begin{itemize}[label=$\bullet$]
-\item Getting general knowledge of the topic
-\item Introducing the term misinformation 
-\item Introducing Naive Bayes and Support Vector Machine
-\item Summarizing and comparing the results found in various sources
+\item Finding and understanding the sources
+\item Extraction of relevant data for the topic
+\item Creating a comparison of the efficiency of machine learning techniques
+\item Analyzing the results
 \end{itemize}
 \end{frame}
 
-\section{Analysis and Results}
+\section{Results and Analysis}
 
-\begin{frame}[fragile=singleslide]\frametitle{Analysis and Results}
+\begin{frame}[fragile=singleslide]\frametitle{Results and Analysis}
+\begin{itemize}[label = $\bullet$]
+\item Summary of all success rates in accuracy, recall, precision and F1 score according to used sources
+\end{itemize}
 \begin{table}[H]
 \centering
-\begin{tabular}{||c c||} 
- \hline
-Naïve Bayes & Support Vector Machine\\ [0.5ex] 
- \hline\hline
- $88.37\%$ & $84\%$  \\
- \hline
- $98.71\%$ & $94.17\%$  \\
- \hline
- $85.85\%$ & $90.95\%$  \\
- \hline
- $84.06\%$ & $95.05\%$  \\ [1ex]
- \hline
-\end{tabular}
-\caption{\centering Accuracy of machine learning techniques in misinformation detection according to various researches}
-\label{table:results}
+\scalebox{0.85}{%
+\begin{tabular}{lllll}
+\cline{2-5}
+                       & \multicolumn{4}{|l|}{Accuracy}  \\ [0.5ex]
+\hline\hline
+\multicolumn{1}{|l|}{Naive Bayes} & \multicolumn{1}{l|}{$88.37\%^{1}$} & \multicolumn{1}{l|}{$98.71\%^{2}$} & \multicolumn{1}{l|}{$85.85\%^{3}$} & \multicolumn{1}{l|}{ $84.06\%^{4}$}\\
+\hline
+\multicolumn{1}{|l|}{Support Vector Machine}& \multicolumn{1}{l|}{$84\%^{1}$} & \multicolumn{1}{l|}{$94.17\%^{2}$} & \multicolumn{1}{l|}{$90.95\%^{3}$} & \multicolumn{1}{l|}{$95.05\%^{4}$} \\ [1ex]
+\hline\hline
+\cline{2-5}
+                       & \multicolumn{4}{|l|}{Recall}  \\ [0.5ex]
+\hline\hline
+\multicolumn{1}{|l|}{Naïve Bayes} & \multicolumn{1}{l|}{$84\%^{1}$} & \multicolumn{1}{l|}{$98.70\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{ $70.53\%^{4}$}\\
+\hline
+\multicolumn{1}{|l|}{Support Vector Machine}& \multicolumn{1}{l|}{$84\%^{1}$} & \multicolumn{1}{l|}{$92.87\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{$93.73\%^{4}$} \\ [1ex]
+\hline\hline
+\cline{2-5}
+                       & \multicolumn{4}{|l|}{Precision}  \\ [0.5ex]
+\hline\hline
+\multicolumn{1}{|l|}{Naïve Bayes} & \multicolumn{1}{l|}{$84\%^{1}$} & \multicolumn{1}{l|}{$99.56\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{ $96.98\%^{4}$}\\
+\hline
+\multicolumn{1}{|l|}{Support Vector Machine}& \multicolumn{1}{l|}{$85\%^{1}$} & \multicolumn{1}{l|}{$99.31\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{$92.56\%^{4}$} \\ [1ex]
+\hline\hline
+\cline{2-5}
+                       & \multicolumn{4}{|l|}{F1 score}  \\ [0.5ex]
+\hline\hline
+\multicolumn{1}{|l|}{Naïve Bayes} & \multicolumn{1}{l|}{$83.5\%^{1}$} & \multicolumn{1}{l|}{$99.13\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{ $81.67\%^{4}$}\\
+\hline
+\multicolumn{1}{|l|}{Support Vector Machine}& \multicolumn{1}{l|}{$84\%^{1}$} & \multicolumn{1}{l|}{$95.98\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{$93.14\%^{4}$} \\ [1ex]
+\hline\hline
+\end{tabular}}
 \end{table}
 \end{frame}
 
-\begin{frame}[fragile=singleslide]\frametitle{Analysis and Results}
+\begin{frame}[fragile=singleslide]\frametitle{Results and Analysis}
+\begin{itemize}[label = $\bullet$]
+\item Harmonic average of each category according to the sources
+\item Graphical visualization of the data
+\end{itemize}
 \begin{figure}
 \centering
-\includegraphics[scale=.35]{average_accuracy.pdf}
+\includegraphics[scale=.35]{average.pdf}
 \end{figure}
 \end{frame}
 
-\section{My Contribution}
+\section{Discussion and conclusion}
 
-\begin{frame}[fragile=singleslide]\frametitle{My Contribution}
+\begin{frame}[fragile=singleslide]\frametitle{Discussion and conclusion}
 \begin{itemize}[label=$\bullet$]
-\item Relevant data extraction
-\item Efficient differentiation between false and true information
+\item Conclusion of results
+\item Comparing efficiency
+\item Limitations
+\item Future work
 \end{itemize}
 \end{frame}
 
 \end{document}
-
-
-
-
-Text za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
-
-\section*{Pomocník}
-% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
-
-\begin{frame}[fragile=singleslide]\frametitle{My Contribution}
-\begin{itemize}
-\item Každá prezentácia musí byť nejako uzavretá
-\item Ale vždy je čo robiť ďalej\ldots{}
-\end{itemize}
-{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
-\end{frame}
-
-\begin{frame}[fragile=singleslide]\frametitle{Misinformation in Healthcare}
-\begin{itemize}
-\item Na zvýraznenie syntaxe stačí použiť balík listings so správne nastaveným programovacím jazykom
-\begin{lstlisting}
-int na_druhu(int i) {
-   return i * i;
-}
-
-int main() {
-   printf("%d", na_druhu(118));
-   return 0;
-}
-\end{lstlisting}
-
-\item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
-\end{itemize}
-\begin{poznamka}
-Text možno uviesť v rámiku
-\end{poznamka}
-
-\begin{itemize}
-\item Program
-
-\begin{program}
-\begin{lstlisting}
-void main() {
-   printf("%d", na_druhu(118));
-}
-
-void na_druhu(int i) {
-   return i * i;
-}
-\end{lstlisting}
-\end{program}
-
-\item Výstup
-\begin{vystup}
-\begin{lstlisting}
-13924
-\end{lstlisting}
-\end{vystup}
-
-\end{itemize}
-\end{frame}

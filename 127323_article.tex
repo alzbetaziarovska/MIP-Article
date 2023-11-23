@@ -32,17 +32,19 @@
 \newpage
 
 \begin{abstract}
-This article offers a comparative analysis of efficiency of two machine learning techniques (Naïve Bayes and Support Vector Machine) used for information retrieval a detection of misinformation in a field of healthcare data. Article is a literature review and offers an outline of current situation of these machine learning methods. The comparison has found a negligible difference between accuracy of the two compared techniques in their efficiency for data retrieval as means of combating medical misinformation. There is a possibility of the use of my findings in everyday practice as these finding can point out that machine learning models are effective in sorting and retrieval of the medical information on the internet. 
+This article offers a comparative analysis of efficiency of two machine learning techniques (Naïve Bayes and Support Vector Machine) used for information retrieval a detection of misinformation in a field of healthcare data. Article is a literature review and offers an outline of current situation of these machine learning methods. The comparison has found a negligible difference between the efficiency of the two compared techniques in data retrieval as means of combating medical misinformation by comparing metrics of accuracy, recall, precision and F1 score. There is a possibility of the use of my findings in everyday practice as these finding can point out that machine learning models are effective in sorting and retrieval of the medical information on the internet. 
 \end{abstract}
 \newpage
 
 \section{Introduction}\label{intro}
 
+It is known, that medical misinformation cause trouble \cite{wa19sys} and many researchers nowadays dive into the field of exploring possible use of machine learning techniques of misinformation detection in healthcare data \cite{bar21health}. Some of them summarize the information retrieval by these models whilst others try to create new techniques based on the existing ones, like Naïve Bayes and Support Vector Machine \cite{chap22unmask}.
+
 \paragraph {Problem Definition} The great challenge in today's world of healthcare and medical information is the amount of the information available on the Internet. Even though it is useful to have easily accessible information, it also causes a problem. If the information is not understood correctly, it can increase fear and anxiety and ultimately lead to the delay of diagnosis and receiving the effective healthcare. \cite{wa19sys}. This issue became even more alarming after the global COVID-19 pandemic, where false medical information have created danger to public health or even lives \cite{war18dr}. 
 
 \paragraph {Contribution} This article contributes to the already existing talk about fixing false health information. By reading and analyzing numerous studies, I was able to compare two machine learning techniques - Naïve Bayes and Support Vector Machine. This literature review does not only bring together ideas from various sources but as well attempts to make an introduction to how these models work in retrieving and detecting medical misinformation. The results I have found can be used by doctors and researchers, who are fighting the negative impact of misinformation in healthcare using machine learning techniques. 
 
-In this article I will talk about the big problem of false health information and how machine learning models Naïve Bayes and Support Vector Machine be used as a potential way of data retrieval that has ability to counter prevalence of misinformation in healthcare.
+\paragraph {} In this article I will talk about the big problem of false health information and how machine learning models Naïve Bayes and Support Vector Machine be used as a potential way of data retrieval that has ability to counter prevalence of misinformation in healthcare.
 
 \section{Related work}
 
@@ -89,14 +91,26 @@ I offer a list of some of the basic points that can help to recognize possible m
 \item {\emph{Sentimental value}} - The goal of misinformation is often to scare people and spread panic. The difference between ratio of positive and negative in true and false claims is notable. Whilst in true claims the ratio is 71\% of positive words to 29\% of negative words, in misinformation sources this ratio is shifted the other way around with only 38\% of positive words and 62\% of negative words \cite{bar21health}.
 \item {\emph{Sources}} - Perhaps the most important step might be to check the original sources of the claim \cite{gra17fact}. We need to look for the trustworthiness of the website or references, where did the author get the information from.
 \end{enumerate}
-%#cvicenie - diagram?
-%\cite{who22infodemics} page 8 \cite{wa19sys}
 
 \paragraph{Technology and people}%Lecture topic reaction
 Besides using the tips for retrieving information on our own there were created websites that offer the result of the misinformation detection and can offer highly reliable picture of whether the checked claim is true or false. Using these websites can speed up the whole process and save the time needed for processing the information manually. These websites usually use the machine learning techniques explained in this Section. A few examples of such websites can be \emph{fullfact.org} or \emph{politifact.com} \cite{alh18fact}.
 
 \subsection{Naïve Bayes}\label{nb}
-The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. The method is based on comparing the possible misinformation and comparing it with the data-set previously used. This method uses probability of the events without taking their relation into the consideration, meaning, order of the words does not play role in the result. \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary from 84,056\% \cite{sha20mach} to 98,71\% \cite{bar21health}. These percentages represent the accuracy of distinguishing false and true information by machine. The closer analysis of these differences and their comparison is given in Section \ref{analysis}.
+The Naïve Bayes method is a linear probabilistic machine learning technique based on Bayes theorem. The method is based on comparing the possible misinformation and comparing it with the data-set previously used. This method uses probability of the events without taking their relation into the consideration, meaning, order of the words does not play role in the result. \cite{sha20mach}. This approach might not look to be the best, as the words have their order and are related one to other in articles. However, the opposite is true, as the linear models are capable of achieving high efficiency despite their simplicity \cite{pod19mach}. The accuracy of Naïve Bayes (as well as other machine learning methods) is also depended from which type of measuring the importance of the words in the documents is used. For the Naïve Bayes the results vary for all metrics (accuracy, recall, precision and F1 score). The closer analysis of  differences between the metrics and their comparison is given in Section \ref{analysis}. In the table \ref{table:nb} are mentioned the lowest and the highest percentages of each metrics according to sources used in this article. All of the percentages used can be found in Table \ref{table:results} in Section \ref{analysis}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{Accuracy}           & \multicolumn{2}{l|}{Recall}      \\ \hline
+\multicolumn{1}{|l|}{84.056\%\cite{sha20mach}} & 98.71\%\cite{bar21health} & \multicolumn{1}{l|}{70.53\%\cite{sha20mach}} & 98.70\%\cite{bar21health} \\ \hline
+\multicolumn{2}{|l|}{Precision}      & \multicolumn{2}{l|}{F1 score}          \\ \hline
+\multicolumn{1}{|l|}{84\%\cite{chap22unmask}} & 99.56\%\cite{bar21health} & \multicolumn{1}{l|}{81.67\%\cite{sha20mach}} & 99.13\%\cite{bar21health} \\ \hline
+\end{tabular}
+\caption{\centering Range of the results for Naïve Bayes according to multiple sources.}
+\label{table:nb}
+\end{table}
+
 
 Formula for Naïve Bayes calculation: \cite{sha20mach}
 
@@ -104,19 +118,66 @@ Formula for Naïve Bayes calculation: \cite{sha20mach}
 P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 \end{equation}
 
-P(A\textbar B) is the probability of event A happening supposing, that event B has already occurred.
+\begin{itemize}
+\item \emph{P(A\textbar B)} is the probability of event A happening supposing, that event B has already occurred \cite{jo03bayes}
+\item \emph{P(B\textbar A)} is representing how possible the event B is, assuming that the event A is true \cite{jo03bayes}
+\item \emph{P(A)} is the main event for which the probability of happening is calculated \cite{jo03bayes}
+\item \emph{P(B)} is an event, which serves as an evidence based on the given data set and training results \cite{jo03bayes}
+\end{itemize}
 
 \subsection{Support Vector Machine}\label{svm}
 Support vector machine might be classified as a binary technique, as its methodology is to divide the data it was given into two categories \cite{pod19mach} (in the case of misinformation detection into true and false information). The division is made by creating a hyperplane (a object in the vector space with one dimension less than the vector space itself). The objective is to identify the hyperplane with the greatest margin, the space between the hyperplane and the nearest data points in each category. After finding the hyperplane, analyzed data can be categorized based on its position relative to the hyperplane \cite{sha20mach}.
-As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can vary according to the technique used for analysis of the given data and for the Support Vector Machine percentages of accuracy are on a scale from 83\% \cite{chap22unmask} to 95,05\% \cite{sha20mach}.
+As it was mentioned in the section \ref{nb} about Naïve Bayes, the result can vary according to the technique used for analysis of the given data and for the Support Vector Machine the lowest and the highest percentages of each metrics can be found in Table \ref{table:svm}. As mentioned in Section \ref{nb}, the whole variety of results can be seen in Table \ref{table:results} in Section \ref{analysis}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{Accuracy}           & \multicolumn{2}{l|}{Recall}      \\ \hline
+\multicolumn{1}{|l|}{83\%\cite{chap22unmask}} & 95.05\%\cite{sha20mach} & \multicolumn{1}{l|}{84\%\cite{chap22unmask}} & 93.73\%\cite{sha20mach} \\ \hline
+\multicolumn{2}{|l|}{Precision}      & \multicolumn{2}{l|}{F1 score}          \\ \hline
+\multicolumn{1}{|l|}{85\%\cite{chap22unmask}} & 99.31\%\cite{bar21health} & \multicolumn{1}{l|}{84\%\cite{chap22unmask}} & 95.98\%\cite{bar21health} \\ \hline
+\end{tabular}
+\caption{\centering Range of the results for Support Vector Machine according to multiple sources.}
+\label{table:svm}
+\end{table}
 
 \paragraph{Ethics and sustainability}%Lecture topic reaction
 As I have established before, spread of false information in medical field can have risky and potentially fatal consequences. Therefore, the retrieval and detection of healthcare misinformation is significant. The machine learning techniques I have mentioned - Naïve Bayes and Support Vector Machine can be used for such purpose. \cite{chap22unmask}. Nevertheless, the incorporation of machine learning techniques requires careful approach, considering, that the data-sets used for training can be biased and generate inaccurate information. \cite{who21ethics}. Therefore there is a need to check, whether the data-sets are representing the population correctly, with adequate diversity. \cite{sch23aut}.
 
 \section{Results and Analysis}\label{analysis}
-In this section I compare their results and analyze their performance. To do so, I have searched of numeric expression of their efficiency in percentage. I used accuracy, recall, precision and F1 score to compare their efficiency. 
+In this section I compare their results and analyze their performance. To do so, I have searched of numeric expression of their efficiency in percentage. I used accuracy, recall, precision and F1 score to compare their efficiency. To correctly understand the equations for the metrics I have to explain some terms:
 
-\paragraph{} \emph{Accuracy} represents the correctness of categorizing health information as true or false. This number is calculated by dividing the correct categorizations and the total number of categorizations made. \emph{Precision} is the proportion of correctly identified medical misinformation among all the cases, which were classified as misinformation. \emph{Recall} introduces the proportion of accurately established health misinformation among all actual cases of misinformation. \emph{F1 Score} represents the harmonic average of precision and recall, which offers an equitable evaluation of the two. \cite{aph18detect}
+\begin{itemize}
+\item \emph{True Positives} - amount of the claim correctly categorized as true
+\item \emph{False Positives} - amount of the claim incorrectly categorized as true
+\item \emph{True Negatives} - amount of the claim correctly categorized as false
+\item \emph{False Negatives} - amount of the claim incorrectly categorized as false
+\end{itemize}
+
+\paragraph{} \emph{Accuracy} represents the correctness of categorizing health information as true or false. This number is calculated by dividing the correct categorizations and the total number of categorizations made \cite{aph18detect}. Equation for calculating accuracy \cite{sha20mach}:
+
+\begin{equation}
+Accuracy = \frac{Correctly categorized data}{Total number of categorizations}
+\end{equation}
+
+\emph{Precision} is the proportion of correctly identified medical misinformation among all the cases, which were classified as misinformation \cite{aph18detect}. Equation for calculating precision \cite{sha20mach}:
+
+\begin{equation}
+Precision = \frac{True Positives}{True Positives + False Positives}
+\end{equation}
+
+\emph{Recall} introduces the proportion of accurately established health misinformation among all actual cases of misinformation \cite{aph18detect}. Equation for calculating recall \cite{sha20mach}:
+
+\begin{equation}
+Recall = \frac{True Positives}{True Positives + False Negatives}
+\end{equation}
+
+\emph{F1 Score} represents the harmonic average of precision and recall, which offers an equitable evaluation of the two \cite{aph18detect}. Equation for calculating f1 score \cite{sha20mach}:
+
+\begin{equation}
+F1 Score = \frac{2*Precision*Recall}{Precision + Recall}
+\end{equation}
 
 \paragraph{} As mentioned in Section \ref{methodology}, this analysis is based on review of existing literature, which allows me to access finding from multiple sources. Each source provides different results which can be found in Table \ref{table:results} with corresponding superscripts of the source that the number comes from. 
 
@@ -156,12 +217,12 @@ In this section I compare their results and analyze their performance. To do so,
 \label{table:results}
 \end{table}
 
-According to the results of this comparison, Support Vector Machine is slightly more efficient in processing medical misinformation with average percentage of success higher in accuracy (91.04\%), recall (90.2\%) and F1 score (91.04\%). However, the Naïve Bayes method is behind just by a little bit with the average percentage of accuracy (89.25\%), recall (84.41\%) and F1 score (88.1\%). In the terms of precision, Naïve Bayes has achieved higher percentage rate of 93.51\% compared to Support Vector Machine with 92.29\%. The average efficiency rate of information retrieval using Naïve Bayes or Support Vector Machine can be seen in Figure \ref{f:average}. 
+According to the results of this comparison, Support Vector Machine is slightly more efficient in processing medical misinformation with average percentage of success higher in accuracy (91.04\%), recall (90.2\%) and F1 score (91.04\%). However, the Naïve Bayes method is behind just by a little bit with the average percentage of accuracy (89.25\%), recall (84.41\%) and F1 score (88.1\%). In the terms of precision, Naïve Bayes has achieved higher percentage rate of 93.51\% compared to Support Vector Machine with 92.29\%. The average efficiency rate of information retrieval using Naïve Bayes or Support Vector Machine can be seen in Figure \ref{f:average}. This graph was created by making a harmonic average of all the results mentioned in Table \ref{table:results} for each metrics for both Naïve Bayes and Support Vector Machine.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{average.pdf}
-\caption{\centering Comparison of average values of each efficiency metrics.}
+\caption{\centering Comparison of average values of each efficiency metric.}
 \label{f:average}
 \end{figure}
 
@@ -180,5 +241,5 @@ This article is an in-depth literature review of articles researching misinforma
 
 \newpage
 \bibliography{127323_bibliography}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \end{document}
