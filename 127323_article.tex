@@ -9,6 +9,7 @@
 \usepackage{times}
 \usepackage{setspace}
 \usepackage{float}
+\usepackage{amsmath}
 
 \setstretch{1.5}
 \pagestyle{headings}
@@ -155,25 +156,25 @@ In this section I compare their results and analyze their performance. To do so,
 \item \emph{False Negatives} - amount of the claim incorrectly categorized as false
 \end{itemize}
 
-\paragraph{} \emph{Accuracy} represents the correctness of categorizing health information as true or false. This number is calculated by dividing the correct categorizations and the total number of categorizations made \cite{aph18detect}. Equation for calculating accuracy \cite{sha20mach}:
+\paragraph{} \emph{Accuracy} represents the correctness of categorizing health information as true or false. This number is calculated by dividing the correct categorizations and the total number of categorizations made. Accuracy is an efficient metric when the categories are distributed equally, as it might me misleading when one class is rarer than the other one \cite{aph18detect}. Equation for calculating accuracy \cite{sha20mach}:
 
 \begin{equation}
-Accuracy = \frac{Correctly categorized data}{Total number of categorizations}
+Accuracy = \frac{\text{\emph{Correctly categorized data}}}{\text{\emph{Total number of categorizations}}}
 \end{equation}
 
-\emph{Precision} is the proportion of correctly identified medical misinformation among all the cases, which were classified as misinformation \cite{aph18detect}. Equation for calculating precision \cite{sha20mach}:
+\emph{Precision} is the proportion of correctly identified medical misinformation among all the cases, which were classified as misinformation. Precision is preferably when the elimination of false positives is required \cite{aph18detect}. Equation for calculating precision \cite{sha20mach}:
 
 \begin{equation}
 Precision = \frac{True Positives}{True Positives + False Positives}
 \end{equation}
 
-\emph{Recall} introduces the proportion of accurately established health misinformation among all actual cases of misinformation \cite{aph18detect}. Equation for calculating recall \cite{sha20mach}:
+\emph{Recall} introduces the proportion of accurately established health misinformation among all actual cases of misinformation. Recall is useful in situations, when false negatives are a big concern and the capture of the maximum amount of misinformation is needed \cite{aph18detect}. Equation for calculating recall \cite{sha20mach}:
 
 \begin{equation}
 Recall = \frac{True Positives}{True Positives + False Negatives}
 \end{equation}
 
-\emph{F1 Score} represents the harmonic average of precision and recall, which offers an equitable evaluation of the two \cite{aph18detect}. Equation for calculating f1 score \cite{sha20mach}:
+\emph{F1 Score} represents the harmonic average of precision and recall, which offers an equitable evaluation of the two. It is applicable when an uneven class distribution occurs \cite{aph18detect}. Equation for calculating f1 score \cite{sha20mach}:
 
 \begin{equation}
 F1 Score = \frac{2*Precision*Recall}{Precision + Recall}
@@ -226,11 +227,17 @@ According to the results of this comparison, Support Vector Machine is slightly 
 \label{f:average}
 \end{figure}
 
+As pictured in Table \ref{f:average}, Support Vector Machine achieves higher success rate in accuracy, recall and F1 score. Naïve Bayes has a higher precision rate with 93.51\%. This can be a helpful information when choosing which one of them to apply. Recall is about not missing any misinformation among all the data-set, whilst precision is about only giving misinformation category to actual misinformation (being more precise), even for the toll of possibly not categorizing as much claims as recall. Precision has generally a lower number of false positives. 
+
 \section{Discussion}
 
 I have found several evidence to confirm, that machine learning techniques can be a very useful (and accurate) tool in retrieving and recognizing misinformation in healthcare with both Naïve Bayes and Support Vector Machine showing satisfactory performance. In my article I used percentages of accuracy, recall, precision and F1 score of these two machine learning techniques used for misinformation detection to analyze and compare their efficiency. 
-The Support Vector Machine achieves a slightly higher accuracy, offering an overall higher correctness to some point. In the terms of precision and recall, Naïve Bayes shows higher precision, which might indicate it is able to identify medical misinformation with greater accuracy among the cases categorized as false information. On the contrary, Support Vector Machine achieves a higher recall percentage, suggesting the fitter ability of identifying actual medical misinformation. The last metrics used was F1 Score. Giving the average of both precision and recall, Support Vector Machine achieves a slightly better result.
-Which one is chosen to retrieve the data might depend on context of the situation in which the technique is used. The Support Vector Machine is according to the result more efficient, however the difference is trivial. The results are not so greatly differing from each other and it shows, that machine learning techniques nowadays are highly advanced and can achieve significant results. The insignificant differences in the results also show the necessity of comparing multiple metrics to complexly evaluate their efficiency in recognizing the healthcare misinformation.
+The Support Vector Machine achieves a slightly higher accuracy, offering an overall higher correctness to some point. In the terms of precision and recall, Naïve Bayes shows higher precision, which might indicate it is able to identify medical misinformation with greater accuracy among the cases categorized as false information. 
+
+This can be useful in cases, where the misinformation is threatening a human's life by any chance and there is an actual need of correctly marking the misinformation and only misinformation. However, precision can possibly categorize less claims compared to recall.
+
+On the contrary, Support Vector Machine achieves a higher recall percentage, suggesting the fitter ability of identifying actual medical misinformation. The last metrics used was F1 Score. Giving the average of both precision and recall (f1 score), Support Vector Machine achieves a slightly better result.
+Which one is chosen to retrieve the data might depend on context of the situation in which the technique is used. The Support Vector Machine is according to the result more efficient, however the difference is trivial. Naïve Bayes might have an advantage when looking for more precisely categorized medical misinformation. The results are not so greatly differing from each other and it shows, that machine learning techniques nowadays are highly advanced and can achieve significant results. The insignificant differences in the results also show the necessity of comparing multiple metrics to complexly evaluate their efficiency in recognizing the healthcare misinformation.
 It is important to acknowledge, that my article is based on literature review of existing researches, which creates limitations by the range of the researches used for the purpose of this article.
 
 \section{Conclusion}\label{conclusion}

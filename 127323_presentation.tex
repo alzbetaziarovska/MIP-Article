@@ -10,6 +10,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
+\usepackage{graphicx}
 
 \usepackage{listings}
 \usepackage{translator}
@@ -55,8 +56,8 @@
 
 \begin{frame}[fragile=singleslide]\frametitle{Introduction}
 \begin{itemize}[label=$\bullet$]
-\item Why are we here?
-\item What is the article about?
+\item \scalebox{1.5}{Why are we here?}
+\item \scalebox{1.5}{What is the article about?}
 \end{itemize}
 \end{frame}
 
@@ -87,14 +88,13 @@
 \begin{itemize}[label=$\bullet$]
 \item Machine learning techniques used for information retrieval
 	\begin{itemize}[label=$\bullet$]
-	\item Naive Bayes
-	\item Support Vector Machine
-	\item New machine learning techniques
+	\item Naive Bayes \cite{sha20mach}\cite{pod19mach}
+	\item Support Vector Machine \cite{bar21health}\cite{chap22unmask}
 	\end{itemize}
 \item Misinformation
 	\begin{itemize}[label=$\bullet$]
-	\item Misinformation vs. disinformation
-	\item Medical misinformation
+	\item Misinformation vs. disinformation\cite{gu20misinfo}
+	\item Medical misinformation\cite{wa19sys}
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -115,9 +115,6 @@
 \section{Results and Analysis}
 
 \begin{frame}[fragile=singleslide]\frametitle{Results and Analysis}
-\begin{itemize}[label = $\bullet$]
-\item Summary of all success rates in accuracy, recall, precision and F1 score according to used sources
-\end{itemize}
 \begin{table}[H]
 \centering
 \scalebox{0.85}{%
@@ -151,6 +148,7 @@
 \multicolumn{1}{|l|}{Support Vector Machine}& \multicolumn{1}{l|}{$84\%^{1}$} & \multicolumn{1}{l|}{$95.98\%^{2}$} & \multicolumn{1}{l|}{$-\%^{3}$} & \multicolumn{1}{l|}{$93.14\%^{4}$} \\ [1ex]
 \hline\hline
 \end{tabular}}
+\caption{\centering Efficiency metrics (accuracy, recall, precision, F1 score) of machine learning techniques in misinformation detection according to various researches, 1 - \cite{chap22unmask}, 2 - \cite{bar21health}, 3 - \cite{pod19mach}, 4 - \cite{sha20mach}}
 \end{table}
 \end{frame}
 
@@ -169,11 +167,13 @@
 
 \begin{frame}[fragile=singleslide]\frametitle{Discussion and conclusion}
 \begin{itemize}[label=$\bullet$]
-\item Conclusion of results
-\item Comparing efficiency
-\item Limitations
-\item Future work
+\item \scalebox{1.5}{Conclusion of results}
+\item \scalebox{1.5}{Comparing efficiency}
+\item \scalebox{1.5}{Limitations}
+\item \scalebox{1.5}{Future work}
 \end{itemize}
 \end{frame}
 
+\bibliography{127323_bibliography}
+\bibliographystyle{unsrt}
 \end{document}
